@@ -1,21 +1,38 @@
-var add = function(num1, num2) {
-return num1 + num2
+var add = function(number1, number2) {
+return number1 + number2
 };
 
-var subtract = function(num1, num2) {
-return num1 - num2
+var subtract = function(number1, number2) {
+return number1 - number2
 };
 
-var multiply = function(num1, num2) {
-return num1 * num2
+var multiply = function(number1, number2) {
+return number1 * number2
 };
 
-var divide = function(num1, num2) {
-return num1 / num2
+var divide = function(number1, number2) {
+return number1 / number2
 };
 
-var num1 = parseInt(prompt("Enter a number:"));
-var num2 = parseInt(prompt("Enter another number:"));
-
-var result = add(num1, num2);
-alert(result);
+$(document).ready(function() {
+  $("form#calculator").submit(function() {
+    event.preventDefault();
+    var number1 = parseInt($("#input1").val());
+    var number2 = parseInt($("#input2").val());
+    var operator = $("input:radio[name=operator]:checked").val();
+    console.log("1st number: " + number1);
+    console.log("2nd number: " + number2);
+    console.log("operator: " + operator);
+    var result;
+    if (operator === "add") {
+      result = add(number1, number2);
+    } else if (operator === "subtract") {
+      result = subtract(number1, number2);
+    } else if (operator === "multiply") {
+      result = multiply(number1, number2);
+    } else if (operator === "divide") {
+      result = divide(number1, number2);
+    }
+    $("#output").text(result);
+  });
+});
