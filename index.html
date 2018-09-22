@@ -2,9 +2,52 @@
 <html>
   <head>
     <title>Calculator</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="js/scripts.js"></script>
   </head>
   <body>
-    <h1>Calculator</h1>
-    <script src="js/scripts.js"></script>
+    <div class="container">
+      <h1>Calculator</h1>
+      <form id="calculator">
+        <div class="form-group">
+          <label for="input1">1st number:</label>
+          <input id="input1" class="form-control" type="text">
+        </div>
+        <div class="from-group">
+          <label for="input2">2nd number:</label>
+          <input id="input2" class="form-control" type="text">
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" name="operator" value="add" checked>
+            add
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" name="operator" value="subtract" checked>
+            subtract
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" name="operator" value="multiply" checked>
+            multiply
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" name="operator" value="divide">
+            divide
+          </label>
+        </div>
+        <button type="submit" class="btn">Go!</button>
+      </form>
+      <div id="output">
+
+      </div>
+    </div>
   </body>
 </html>
